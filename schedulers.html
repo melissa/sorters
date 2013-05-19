@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://legacy.lclark.edu/~aasmith/sorters/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Schedulers</title>
+<script src="./scheduling.js"></script>
+
+</head>
+<body style="background-color: white;">  
+
+<noscript>&lt;h1 style="color:red;"&gt;You seem to have JavaScript turned off. This page will not function without it.&lt;/h1&gt;</noscript>
+
+<h1>A Comparison of Scheduling Algorithms...</h1>
+
+<form>
+	<!--<input type="text" name="bursts">-->
+<canvas width="1000" height="500" data-program="schedulers" data-bursts="32, 40,40,10,20, 80, 90, 20" data-types="fifo,sjf,rr" data-atomicNum = "20" data-colors="green,purple,blue,red" style="cursor: default;">Your browser does not support the HTML 5 Canvas.</canvas>
+</form>
+<br>
+
+
+
+<h2>A small teaching applet</h2>
+
+This applet is intended as a tool for students studying the different scheduling algorithms used in Operating Systems. At present, three are implemented:
+<ul>
+<li>First In First Out</li>
+<li> Shortest Job First </li>
+<li>Round Robin</li>
+</ul>
+Each different algorithm presents a list of <b>all jobs</b> and their <b>burst times</b>. Each step is a <u>context switch</u>, where one job is evicted from the device, and another begins. With each context switch, we unhighlight the old job, and highlight the new one. This is used to further emphasize the difference by which each algorithm chooses the next job to send to the device.
+
+<br/><br/>
+<ul>
+	<li>
+		<b>The First In First Out Scheduler</b>
+			<ul>
+				<li> orders the jobs by <u>start time</u> </li>
+				<li>lets each job run the full length of its burst</li>
+			</ul>
+	<br/>
+	</li>
+	<li><b>The Shortest Job First Scheduler</b>
+		<ul>
+			<li> orders the jobs by <u>burst time</u> and if the burst times are the same, it orders by <u>start time</u></li>
+			<li>lets the job run the full length of its burst.</li>
+		</ul>
+	<br/>
+	</li>
+	<li>
+	<b>The Round Robin Scheduler</b>
+		<ul>
+			<li>orders jobs by <u>start time</u></li>
+			<li>permits the job to run for a maximum of N units of time, where N is the <u>atomic number</u> specified by the programmer</li>
+			<li>It will have the job run for a length of at most N, and then add it back to the queue to finish its burst.</li>
+		</ul>
+	</li>
+</ul>
+
+<br/>
+
+The visualization of these different scheduling algorithms is especially important because the algorithms themselves are not necessarily intuitive. For a student to have access to a visual representation of the actual steps each takes to acomplish its task provides one more medium that student can learn to understand the material. What makes this visual representation of the algorithms all the more potent is their interactivity. This applet allows students to really engage in the material, to play with it. Hopefully, this will encourage a more comprehensive understanding of the different algorithms that will make an impression beyond the next test.
+
+<br/> <br/>
+
+At the moment, students have three different means of interacting with the applet:
+<ul>
+	<li>A play/pause button to run all algorithms to the end</li>
+	<li>A reset button to refresh all algorithms </li>
+	<li>A step button to have each algorithm make one context switch from the current job to the next job</li>
+</ul>
+
+Unfortunately, this interactive capability isn't all it could be. Ideally, we would implement a few other means of creating a fully interactive design. Students would be able to:
+<ul>
+	<li>specify how many jobs they want in the system</li>
+	<li>specify a unique burst time for each job</li>
+	<li>specify a unique start time for each job</li>
+	<li>specify the atomic number for Round Robin Scheduling</li>
+	<li>step forward by one unit of time</li>
+	<li>step backward by a context change</li>
+	<li>step backward by a unit of time</li>
+</ul>
+
+Ideally, we would also have Shortest Remaining Time First Scheduling and Priority Scheduling in addition to the three algorithms we already have, again letting students customize all aspects of the jobs to be run, including priority level for Priority Scheduling.
+<br/>
+
+<h5>Applet created by Tamar Cartun and Melissa Stone, CS 363: Operating Systems, Lewis & Clark College, Spring 2013</h5>
+</body>
+</html>
